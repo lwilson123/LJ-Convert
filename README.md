@@ -17,11 +17,7 @@ Made by **LJGAMES**.
 
 ## Preview
 
-Add a screenshot named `screenshot.png` to the project folder, then this image will show on GitHub:
-
-```md
 ![LJ Convert Screenshot](screenshot.png)
-```
 
 ## Project Files
 
