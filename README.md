@@ -1,6 +1,6 @@
 # LJ Convert
 
-**LJ Convert** is a lightweight Windows video and audio converter with a glossy Frutiger Aero-inspired interface. It can convert local video files to **MP4** or **MP3**, and it can also download and convert online videos when you have permission to use them.
+**LJ Convert** is a Windows video and audio converter with a glossy Frutiger Aero-inspired interface. It can convert local video files to **MP4** or **MP3**, and it can also download and convert online videos when you have permission to use them.
 
 Made by **LJGAMES**.
 
@@ -9,18 +9,34 @@ Made by **LJGAMES**.
 * Convert local video files to MP4
 * Convert local video files to MP3
 * Download permitted online videos using yt-dlp
-* Clean Frutiger Aero-style interface
+* Frutiger Aero-inspired interface
 * Glossy blue segmented progress bar
-* Small Windows desktop app
-* No command prompt window when exported correctly
-* Supports custom app icon when built with PyInstaller
+* Custom app icon support
+* Can be built as a single Windows EXE
+* No command prompt window when built with PyInstaller
 
 ## Preview
 
-Add a screenshot here after you build the app:
+Add a screenshot named `screenshot.png` to the project folder, then this image will show on GitHub:
 
 ```md
 ![LJ Convert Screenshot](screenshot.png)
+```
+
+## Project Files
+
+A simple project setup should look like this:
+
+```txt
+LJConvertProject/
+├─ README.md
+├─ main.py
+├─ app.ico
+├─ screenshot.png
+└─ bin/
+   ├─ ffmpeg.exe
+   ├─ ffprobe.exe
+   └─ yt-dlp.exe
 ```
 
 ## Requirements
@@ -32,24 +48,14 @@ To run the Python version, you need:
 * FFprobe
 * yt-dlp
 
-For the easiest setup, place the tools inside a `bin` folder next to the Python file:
-
-```txt
-LJConvertProject/
-├─ lj_convert.py
-├─ app.ico
-└─ bin/
-   ├─ ffmpeg.exe
-   ├─ ffprobe.exe
-   └─ yt-dlp.exe
-```
+For the easiest setup, put `ffmpeg.exe`, `ffprobe.exe`, and `yt-dlp.exe` inside the `bin` folder next to `main.py`.
 
 ## How to Run
 
-Install Python if you do not already have it, then run:
+Open a command prompt in the project folder and run:
 
 ```bat
-py lj_convert.py
+py main.py
 ```
 
 ## How to Build the EXE
@@ -72,20 +78,18 @@ py -m PyInstaller ^
   --add-binary "bin\ffmpeg.exe;bin" ^
   --add-binary "bin\ffprobe.exe;bin" ^
   --add-binary "bin\yt-dlp.exe;bin" ^
-  lj_convert.py
+  main.py
 ```
 
-The finished file will be created here:
+The finished EXE will be created here:
 
 ```txt
 dist/LJ Convert.exe
 ```
 
-## Notes About File Size
+## Smaller EXE Build
 
-If FFmpeg, FFprobe, and yt-dlp are bundled into the EXE, the final file may be large. This is normal because FFmpeg is a large tool by itself.
-
-For a smaller EXE, build without bundling the `bin` folder:
+If you want a smaller EXE, you can build without bundling FFmpeg, FFprobe, and yt-dlp:
 
 ```bat
 py -m PyInstaller ^
@@ -94,10 +98,14 @@ py -m PyInstaller ^
   --clean ^
   --name "LJ Convert" ^
   --icon "app.ico" ^
-  lj_convert.py
+  main.py
 ```
 
-With this smaller build, FFmpeg and yt-dlp need to be installed separately or available through your system PATH.
+This makes the EXE smaller, but FFmpeg, FFprobe, and yt-dlp must be installed separately or available through your system PATH.
+
+## File Size Note
+
+If FFmpeg, FFprobe, and yt-dlp are bundled into the EXE, the final file may be large. This is normal because FFmpeg is a large tool by itself.
 
 ## Supported Input Files
 
@@ -118,6 +126,19 @@ LJ Convert currently supports:
 
 * `.mp4` video output
 * `.mp3` audio output
+
+## Screenshot Setup
+
+To add a screenshot to the GitHub README:
+
+1. Open LJ Convert.
+2. Press `Windows + Shift + S`.
+3. Select the app window.
+4. Paste the screenshot into Paint or another image editor.
+5. Save it as `screenshot.png`.
+6. Put `screenshot.png` in the same folder as `README.md`.
+
+Then the preview image will show automatically on GitHub.
 
 ## Legal Notice
 
