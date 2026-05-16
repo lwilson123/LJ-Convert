@@ -131,20 +131,3 @@ LJ Convert uses:
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 * Python Tkinter
 
-## License
-
-You can add your license here. For a simple open-source project, the MIT License is a common choice.
-
-Example:
-
-```txt
-MIT License
-
-Copyright (c) 2026 LJGAMES
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files, to deal in the Software
-without restriction, including without limitation the rights to use, copy,
-modify, merge, publish, distribute, sublicense, and/or sell copies of the
-Software, subject to the full MIT License text.
-```
